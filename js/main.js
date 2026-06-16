@@ -156,7 +156,9 @@ function closeModal() {
 }
 
 document.querySelectorAll('[data-action="reserve"]').forEach(btn => {
-  btn.addEventListener('click', openModal);
+  btn.addEventListener('click', () => {
+    document.getElementById('prenotazione').scrollIntoView({ behavior: 'smooth' });
+  });
 });
 
 backdrop.addEventListener('click', closeModal);
