@@ -1004,6 +1004,10 @@ button {
   margin-bottom: 2.5rem;
 }
 
+.atmosfera-header .section-subtitle {
+  max-width: 680px;
+}
+
 /* Bento Grid */
 .bento-grid {
   display: grid;
