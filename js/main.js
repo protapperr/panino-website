@@ -6,9 +6,8 @@
    1. Lucide Icons initialisieren
    2. Navigation (Scroll-State + Mobile-Toggle)
    3. Speisekarten-Tabs
-   4. Reservierungs-Modal
-   5. GSAP ScrollTrigger Animationen
-   6. Stats-Counter
+   4. GSAP ScrollTrigger Animationen
+   5. Stats-Counter
    ════════════════════════════════════════════════════════ */
 
 
@@ -99,98 +98,6 @@ tabBtns.forEach(btn => {
   });
 });
 
-
-/* ── 4. Reservierungs-Modal ─────────────────────────── */
-const modal       = document.getElementById('reservationModal');
-const backdrop    = document.getElementById('modalBackdrop');
-const closeBtn    = document.getElementById('modalClose');
-const modalBody   = document.getElementById('modalBody');
-let   widgetReady = false;
-
-function loadReservationWidget() {
-  if (widgetReady) return;
-  widgetReady = true;
-
-  /* ══════════════════════════════════════════════════════
-     RESMIO WIDGET — Aktivierung
-     ══════════════════════════════════════════════════════
-     1. Konto anlegen: https://app.resmio.com
-     2. Einstellungen → Widget → Widget-ID kopieren
-     3. Diese Zeilen auskommentieren und ID ersetzen:
-
-     const resmioId = 'DEINE_RESMIO_ID';
-     modalBody.innerHTML = '<div id="resmio-booking-widget"></div>';
-     const s = document.createElement('script');
-     s.src   = `https://app.resmio.com/${resmioId}/widget.js`;
-     s.async = true;
-     document.head.appendChild(s);
-     ══════════════════════════════════════════════════════
-
-     OPENTABLE Alternative:
-     const s   = document.createElement('script');
-     s.src     = 'https://www.opentable.de/widget/reservation/loader?rid=RESTAURANT_ID&type=standard&theme=standard&color=1&dark=false&iframe=true&domain=de&lang=de-DE';
-     s.async   = true;
-     modalBody.appendChild(s);
-  ══════════════════════════════════════════════════════ */
-}
-
-function openModal() {
-  modal.hidden = false;
-  document.body.classList.add('no-scroll');
-
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-      modal.classList.add('visible');
-      closeBtn.focus();
-      loadReservationWidget();
-    });
-  });
-}
-
-function closeModal() {
-  modal.classList.remove('visible');
-  document.body.classList.remove('no-scroll');
-  setTimeout(() => {
-    modal.hidden = true;
-  }, 320);
-}
-
-document.querySelectorAll('[data-action="reserve"]').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.getElementById('prenotazione').scrollIntoView({ behavior: 'smooth' });
-  });
-});
-
-backdrop.addEventListener('click', closeModal);
-closeBtn.addEventListener('click', closeModal);
-
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape' && !modal.hidden) {
-    closeModal();
-  }
-});
-
-modal.addEventListener('keydown', e => {
-  if (e.key !== 'Tab') return;
-
-  const focusable = modal.querySelectorAll(
-    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-  );
-  const first = focusable[0];
-  const last  = focusable[focusable.length - 1];
-
-  if (e.shiftKey) {
-    if (document.activeElement === first) {
-      e.preventDefault();
-      last.focus();
-    }
-  } else {
-    if (document.activeElement === last) {
-      e.preventDefault();
-      first.focus();
-    }
-  }
-});
 
 
 /* ── 5. GSAP ScrollTrigger Animationen ─────────────── */
