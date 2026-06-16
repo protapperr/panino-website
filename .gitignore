@@ -1,0 +1,18 @@
+# Cursor / Editor
+.cursorrules
+.cursor/
+*.cursor-*
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs & temporäre Dateien
+*.log
+*.tmp
+*.bak
+
+# Node (falls später Tools hinzukommen)
+node_modules/
+npm-debug.log*

@@ -1,0 +1,1669 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Panino – Cucina italiana am Schrannenplatz in Erding. Authentische italienische Küche, frische Pasta und edles Ambiente. Tisch online reservieren.">
+  <meta property="og:title" content="Panino – Ristorante · Erding">
+  <meta property="og:description" content="Cucina italiana am Schrannenplatz in Erding.">
+  <title>Panino – Ristorante · Erding</title>
+
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════
+       NAVIGATION
+  ══════════════════════════════════════ -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="#home" class="nav-logo" aria-label="Panino – Startseite">
+        <span class="logo-wordmark"><span class="logo-pa">pa</span><span class="logo-ni">Ni</span><span class="logo-no">no</span></span>
+        <span class="logo-tricolor" aria-hidden="true"></span>
+      </a>
+
+      <nav aria-label="Hauptnavigation">
+        <ul class="nav-links" id="navLinks" role="list">
+          <li><a href="#storia">La Storia</a></li>
+          <li><a href="#carta">La Carta</a></li>
+          <li><a href="#atmosfera">Atmosfera</a></li>
+          <li>
+            <button class="btn btn-gold btn-sm" data-action="reserve" type="button">
+              Reservieren
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" type="button"
+              aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+
+  <!-- ══════════════════════════════════════
+       1. HERO
+  ══════════════════════════════════════ -->
+  <section class="hero" id="home" aria-label="Willkommen bei Panino">
+    <video class="hero-bg" aria-hidden="true"
+           autoplay muted loop playsinline preload="none">
+      <source src="https://www.pexels.com/de-de/download/video/6089914/?fps=29.97&h=1080&w=2048"
+              type="video/mp4">
+    </video>
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow" data-gsap="eyebrow">
+        Cucina Italiana &middot; Schrannenplatz, Erding
+      </p>
+      <h1 class="hero-title">
+        <span class="hero-title-line" data-gsap="title-line">Dove ogni pasto</span>
+        <span class="hero-title-line hero-title-italic" data-gsap="title-line">diventa un ricordo</span>
+      </h1>
+      <p class="hero-subtitle" data-gsap="subtitle">
+        Authentische italienische Küche, täglich frische Pasta und ein Ambiente,
+        das Sie vergessen lässt, wo Sie sind.
+      </p>
+      <div class="hero-actions" data-gsap="actions">
+        <a href="#carta" class="btn btn-outline">Speisekarte entdecken</a>
+        <button class="btn btn-gold" data-action="reserve" type="button">
+          Tisch reservieren
+        </button>
+      </div>
+    </div>
+
+    <div class="hero-scroll-indicator" aria-hidden="true">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       2. LA STORIA
+  ══════════════════════════════════════ -->
+  <section class="section storia" id="storia" aria-label="Unsere Geschichte">
+    <div class="container storia-grid">
+
+      <div class="storia-image-wrap" data-gsap="from-left">
+        <img
+          src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=900&auto=format&fit=crop"
+          alt="Das Team von Panino in der Küche bei der Arbeit"
+          width="900" height="700"
+          loading="lazy">
+        <div class="storia-badge" aria-hidden="true">
+          <span>dal</span>
+          <strong>[JAHR]</strong>
+        </div>
+      </div>
+
+      <div class="storia-text" data-gsap="from-right">
+        <span class="section-eyebrow">La nostra storia</span>
+        <h2 class="section-title">
+          Eine Leidenschaft, <em>geboren in der Familie</em>
+        </h2>
+        <p class="storia-lead">
+          Was als Traum begann, ist heute ein Ort geworden, an dem Gäste aus Erding
+          und der Region zusammenkommen — um zu genießen, zu lachen und
+          gemeinsame Erinnerungen zu schaffen.
+        </p>
+        <p class="storia-body">
+          Unsere Küche ist eine Hommage an die klassische Trattoria:
+          Pasta wird täglich frisch zubereitet, die Zutaten kommen von
+          ausgesuchten Lieferanten, und jedes Gericht trägt die
+          Handschrift unseres Küchenchefs.
+          Wir kochen, wie unsere Nonna es uns beigebracht hat —
+          mit Zeit, Respekt und echten Zutaten.
+        </p>
+        <div class="storia-signature">
+          <div class="signature-line" aria-hidden="true"></div>
+          <p><strong>Nino Filippetti</strong>, Fondatore</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       3. LA CARTA
+  ══════════════════════════════════════ -->
+  <section class="section carta" id="carta" aria-label="Speisekarte">
+    <div class="container">
+
+      <div class="carta-header" data-gsap="fade-up">
+        <span class="section-eyebrow">La Carta</span>
+        <h2 class="section-title">Unsere Speisekarte</h2>
+        <p class="section-subtitle">
+          Frühstück täglich ab Öffnung · Pasta frisch zubereitet ·
+          Saisonale Änderungen vorbehalten · Allergene auf Anfrage
+        </p>
+      </div>
+
+      <div class="carta-tabs-wrap" data-gsap="fade-up">
+        <div class="carta-tabs" role="tablist" aria-label="Speisekarte Kategorien">
+          <button class="tab-btn active" role="tab" type="button"
+                  aria-selected="true" aria-controls="tab-fruehstueck" data-tab="fruehstueck">
+            Frühstück
+          </button>
+          <button class="tab-btn" role="tab" type="button"
+                  aria-selected="false" aria-controls="tab-pizza" data-tab="pizza">
+            Pizza
+          </button>
+          <button class="tab-btn" role="tab" type="button"
+                  aria-selected="false" aria-controls="tab-pasta" data-tab="pasta">
+            Pasta &amp; Salate
+          </button>
+          <button class="tab-btn" role="tab" type="button"
+                  aria-selected="false" aria-controls="tab-dolci" data-tab="dolci">
+            Dolci
+          </button>
+          <button class="tab-btn" role="tab" type="button"
+                  aria-selected="false" aria-controls="tab-kaffee" data-tab="kaffee">
+            Kaffee
+          </button>
+          <button class="tab-btn" role="tab" type="button"
+                  aria-selected="false" aria-controls="tab-getraenke" data-tab="getraenke">
+            Getränke &amp; Vini
+          </button>
+        </div>
+      </div>
+
+      <!-- Frühstück -->
+      <div class="tab-panel active" id="tab-fruehstueck" role="tabpanel">
+
+        <div class="menu-subsection">
+          <span class="menu-subsection-title">Frühstück</span>
+        </div>
+        <div class="vini-grid">
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>„italia"</h3><p class="vino-region">Leicht &amp; klassisch</p></div>
+              <div class="vino-prices"><span><strong>4,90 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Croissant, Butter und Marmelade</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>„dolce"</h3><p class="vino-region">Süß</p></div>
+              <div class="vino-prices"><span><strong>8,80 €</strong></span></div>
+            </div>
+            <p class="vino-desc">4 Pancakes mit Ahornsirup</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>„toast francese"</h3><p class="vino-region">Süß</p></div>
+              <div class="vino-prices"><span><strong>8,80 €</strong></span></div>
+            </div>
+            <p class="vino-desc">In Ei eingelegtes und gebratenes Toast mit Zimt, Zucker und Nutella</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>„amerigo"</h3><p class="vino-region">Herzhaft</p></div>
+              <div class="vino-prices"><span><strong>11,90 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Zwei Spiegeleier, Kartoffeln, gebratener Speck, zwei Bratwürste, Baguette und Butter</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>„mediterranea"</h3><p class="vino-region">Mediterran</p></div>
+              <div class="vino-prices"><span><strong>12,90 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Scheibe Landbrot mit Guacamole und zwei pochierten Eiern, dazu Joghurt mit Knusper-Müsli und Obst</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>„stretto massimo"</h3><p class="vino-region">Herzhaft</p></div>
+              <div class="vino-prices"><span><strong>12,90 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Scheibe Landbrot mit Basilikumfrischkäse, Schinken und zwei Spiegeleiern, dazu Joghurt mit Knusper-Müsli und Obst</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>„vegana"</h3><p class="vino-region">Vegan</p></div>
+              <div class="vino-prices"><span><strong>12,90 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Scheibe Landbrot mit Hummus, gebratenen Champignons, Frühlingszwiebeln und Rucola, dazu veganer Joghurt mit Knuspermüsli und Obst</p>
+          </article>
+          <article class="vino-card vino-featured">
+            <div class="vino-top">
+              <div><h3>„paNino"</h3><p class="vino-region">Signatur-Frühstück</p></div>
+              <div class="vino-prices"><span><strong>14,90 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Parmaschinken, Salami spianata, Wachholderschinken, Mozzarella, 2 Rühr- oder Spiegeleier, Tomatenfrischkäse, Butter, Marmelade und ein Brotkorb</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>„deluxe"</h3><p class="vino-region">Premium</p></div>
+              <div class="vino-prices"><span><strong>15,90 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Scheibe Landbrot mit Radieschenfrischkäse, Avocado und Räucherlachs, dazu ein kleines Rührei Natur</p>
+          </article>
+        </div>
+
+        <div class="menu-subsection">
+          <span class="menu-subsection-title">Eierspeisen</span>
+          <p class="menu-subsection-note">3 Rühreier oder 3 Spiegeleier · serviert mit Backwaren und Butter</p>
+        </div>
+        <div class="vini-grid">
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Natur</h3></div>
+              <div class="vino-prices"><span><strong>6,80 €</strong></span></div>
+            </div>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>mit Kochschinken</h3></div>
+              <div class="vino-prices"><span><strong>8,80 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Mit gebratenem Kochschinken</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>mit Speck</h3></div>
+              <div class="vino-prices"><span><strong>8,80 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Mit gebratenem Speck</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>mit Tomate &amp; Lauchzwiebeln</h3></div>
+              <div class="vino-prices"><span><strong>7,80 €</strong></span></div>
+            </div>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>mit Avocado</h3></div>
+              <div class="vino-prices"><span><strong>9,80 €</strong></span></div>
+            </div>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>mit Räucherlachs &amp; Meerrettich</h3></div>
+              <div class="vino-prices"><span><strong>9,80 €</strong></span></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="menu-subsection">
+          <span class="menu-subsection-title">Brote</span>
+        </div>
+        <div class="vini-grid">
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>„pane siciliana"</h3></div>
+              <div class="vino-prices"><span><strong>8,10 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Basilikumfrischkäse, gegrillte Paprika, Mozzarella und frischer Rucola</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>„pane capri"</h3></div>
+              <div class="vino-prices"><span><strong>8,10 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Basilikumfrischkäse, frische Tomaten und Mozzarella</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>„pane hummus"</h3><p class="vino-region">Vegan</p></div>
+              <div class="vino-prices"><span><strong>8,10 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Hummus, Avocado und karamellisierte Zwiebeln</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>„pane rosella"</h3></div>
+              <div class="vino-prices"><span><strong>8,50 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Warmer Kartoffel-Rosmarin-Frischkäse</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>„pane vegetariana"</h3><p class="vino-region">Vegetarisch</p></div>
+              <div class="vino-prices"><span><strong>8,50 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Aprikose-Rosmarinfrischkäse, Ziegenkäse, Honig und frischer Rucola</p>
+          </article>
+        </div>
+
+        <div class="menu-subsection">
+          <span class="menu-subsection-title">paNino Platte</span>
+        </div>
+        <div class="vini-grid">
+          <article class="vino-card vino-featured">
+            <div class="vino-top">
+              <div><h3>„tagliere misto"</h3><p class="vino-region">Wurst &amp; Käse</p></div>
+              <div class="vino-prices"><span><strong>16,90 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Parmaschinken, Salami, Gorgonzola, Bergkäse, Parmigiano, gemischtes AntiPasti, Frischkäse und Brotkorb</p>
+          </article>
+          <article class="vino-card vino-featured">
+            <div class="vino-top">
+              <div><h3>„tagliere formaggi"</h3><p class="vino-region">Käse</p></div>
+              <div class="vino-prices"><span><strong>16,90 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Gorgonzola, Mozzarella mit Tomate, Bergkäse, Parmigiano, gemischtes AntiPasti, Frischkäse und Brotkorb</p>
+          </article>
+        </div>
+        <p class="menu-note">Umbestellungen ab 0,80 €</p>
+
+      </div>
+
+      <!-- Pizza -->
+      <div class="tab-panel" id="tab-pizza" role="tabpanel" hidden>
+
+        <div class="menu-subsection">
+          <span class="menu-subsection-title">Pizzabrot</span>
+          <p class="menu-subsection-note">32 cm</p>
+        </div>
+        <div class="vini-grid">
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>„pane bianco"</h3></div>
+              <div class="vino-prices"><span><strong>6,90 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Weißes Pizzabrot mit Knoblauchöl</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>„pane rosso"</h3></div>
+              <div class="vino-prices"><span><strong>6,90 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Pizzabrot mit Tomatensauce und Knoblauchöl</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>„bruschetta"</h3></div>
+              <div class="vino-prices"><span><strong>7,90 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Warmes Pane pugliese mit Tomaten, roten Zwiebeln und Knoblauch</p>
+          </article>
+        </div>
+
+        <div class="menu-subsection">
+          <span class="menu-subsection-title">Pizza paNino</span>
+          <p class="menu-subsection-note">32 cm · Basis: Tomatensauce &amp; Mozzarella</p>
+        </div>
+        <div class="vini-grid">
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>„margherita"</h3></div>
+              <div class="vino-prices"><span><strong>8,90 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Tomatensauce und Mozzarella</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>„funghi"</h3></div>
+              <div class="vino-prices"><span><strong>10,50 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Tomatensauce, Mozzarella und Champignons</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>„salame"</h3></div>
+              <div class="vino-prices"><span><strong>10,90 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Tomatensauce, Mozzarella und Salami</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>„prosciutto"</h3></div>
+              <div class="vino-prices"><span><strong>10,90 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Tomatensauce, Mozzarella und Schinken</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>„pomodorini e cipolla rosse"</h3></div>
+              <div class="vino-prices"><span><strong>11,90 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Tomatensauce, Mozzarella, Kirschtomaten, rote Zwiebeln und Rucola</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>„regina"</h3></div>
+              <div class="vino-prices"><span><strong>11,90 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Tomatensauce, Mozzarella, Schinken und Champignons</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>„puttanesca"</h3></div>
+              <div class="vino-prices"><span><strong>11,90 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Tomatensauce, Mozzarella, Sardellen, Oliven und Kapern</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>„diavola"</h3></div>
+              <div class="vino-prices"><span><strong>12,90 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Tomatensauce, Mozzarella, scharfe Salami und Rucola</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>„gorgonzola"</h3></div>
+              <div class="vino-prices"><span><strong>12,90 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Tomatensauce, Mozzarella, Gorgonzola und Birnenspalten</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>„tonno e cipolla"</h3></div>
+              <div class="vino-prices"><span><strong>13,50 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Tomatensauce, Mozzarella, Thunfisch und rote Zwiebeln</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>„capricciosa"</h3></div>
+              <div class="vino-prices"><span><strong>13,50 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Tomatensauce, Mozzarella, Schinken, Peperoni, Champignons und Oliven</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>„parma"</h3></div>
+              <div class="vino-prices"><span><strong>13,90 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Tomatensauce, Mozzarella, Parmaschinken, Parmesan und Rucola</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>„bufalina"</h3></div>
+              <div class="vino-prices"><span><strong>13,90 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Tomatensauce, Mozzarella, Tomatenscheiben, Büffelmozzarella und Rucola</p>
+          </article>
+          <article class="vino-card vino-featured">
+            <div class="vino-top">
+              <div><h3>„tartufo"</h3><p class="vino-region">Premium · Trüffel</p></div>
+              <div class="vino-prices"><span><strong>16,90 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Tomatensauce, Mozzarella und eingelegtem Trüffel</p>
+          </article>
+        </div>
+        <p class="menu-note">Umbestellungen ab 0,80 €</p>
+
+      </div>
+
+      <!-- Pasta & Salate -->
+      <div class="tab-panel" id="tab-pasta" role="tabpanel" hidden>
+
+        <div class="menu-subsection">
+          <span class="menu-subsection-title">Salate</span>
+        </div>
+        <div class="vini-grid">
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>„caprese di bufala"</h3><p class="vino-region">Vegetarisch</p></div>
+              <div class="vino-prices"><span><strong>13,50 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Büffelmozzarella mit Tomatenscheiben, Basilikumpesto und Rucola</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>„insalata pollo"</h3></div>
+              <div class="vino-prices"><span><strong>15,80 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Bunter Salatteller mit Hähnchenbrustfilet (Basilikumpesto oder Teriyaki), Mozzarella, Walnüssen und Croutons</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>„insalata capra"</h3><p class="vino-region">Vegetarisch</p></div>
+              <div class="vino-prices"><span><strong>15,80 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Bunter Salatteller mit gegrilltem Ziegenkäse, Birnenspalten, Walnüssen und Feigensenf</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>„insalata salmone e avocado"</h3></div>
+              <div class="vino-prices"><span><strong>16,90 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Bunter Salatteller mit gegrilltem Lachs und Avocado</p>
+          </article>
+        </div>
+
+        <div class="menu-subsection">
+          <span class="menu-subsection-title">Pasta</span>
+        </div>
+        <div class="vini-grid">
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>„rigatoni italia"</h3></div>
+              <div class="vino-prices"><span><strong>12,50 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Rigatoni mit Frühlingszwiebeln, Kirschtomaten, Mozzarella und Rucola</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>„rigatoni al forno"</h3><p class="vino-region">Überbacken</p></div>
+              <div class="vino-prices"><span><strong>12,50 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Rigatoni mit Erbsen, Schinken und Champignons in Tomaten-Sahnesauce</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>„spaghetti calabrese"</h3></div>
+              <div class="vino-prices"><span><strong>12,90 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Spaghetti in Tomatensauce mit frischer Salsiccia, Knoblauch und Basilikum</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>„ravioli piemontesi"</h3></div>
+              <div class="vino-prices"><span><strong>13,90 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Ravioli mit Ricotta-Spinat-Füllung an Salbei-Zitronenbuttersauce und Parmesan</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>„spaghetti salmone e zucchine"</h3></div>
+              <div class="vino-prices"><span><strong>14,90 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Spaghetti mit Lachs und Zucchini in Sahnesauce</p>
+          </article>
+          <article class="vino-card vino-featured">
+            <div class="vino-top">
+              <div><h3>„spaghetti al tartufo"</h3><p class="vino-region">Premium · Trüffel</p></div>
+              <div class="vino-prices"><span><strong>16,90 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Spaghetti in cremiger Parmesansauce mit eingelegtem Trüffel</p>
+          </article>
+        </div>
+
+      </div>
+
+      <!-- Dolci -->
+      <div class="tab-panel" id="tab-dolci" role="tabpanel" hidden>
+
+        <div class="menu-subsection">
+          <span class="menu-subsection-title">Süßes</span>
+        </div>
+        <div class="vini-grid">
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>„tortina calda al cioccolato"</h3></div>
+              <div class="vino-prices"><span><strong>7,20 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Warmes Schokoladen-Törtchen mit einer Kugel Vanilleeis</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>„strudel di mela"</h3></div>
+              <div class="vino-prices"><span><strong>7,20 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Warmer Apfelstrudel mit Rosinen, dazu Vanillesauce</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>„frittata dolce spezzettata"</h3></div>
+              <div class="vino-prices"><span><strong>8,90 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Kaiserschmarrn ohne Rosinen mit Apfelmus</p>
+          </article>
+        </div>
+
+        <div class="menu-subsection">
+          <span class="menu-subsection-title">Extras &amp; Beilagen</span>
+        </div>
+        <div class="vini-grid">
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Joghurt mit Knusper-Müsli</h3></div>
+              <div class="vino-prices"><span><strong>6,50 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Mit Honig, Nuss-Mix und frischem Obst</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Veganer Joghurt</h3><p class="vino-region">Vegan</p></div>
+              <div class="vino-prices"><span><strong>6,90 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Mit Knusper-Müsli, Agavensirup, Nuss-Mix und frischem Obst</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Croissant</h3><p class="vino-region">Solange der Vorrat reicht</p></div>
+              <div class="vino-prices"><span><strong>2,50 €</strong></span></div>
+            </div>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Breze</h3><p class="vino-region">Solange der Vorrat reicht</p></div>
+              <div class="vino-prices">
+                <span>natur <strong>2,00 €</strong></span>
+                <span>mit Butter <strong>3,20 €</strong></span>
+                <span>mit Aufstrich <strong>4,50 €</strong></span>
+              </div>
+            </div>
+            <p class="vino-desc">Aufstriche: Radieschen-, Basilikum-Tomaten- oder Aprikose-Rosmarinfrischkäse</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Orangensaft frisch gepresst</h3></div>
+              <div class="vino-prices">
+                <span>0,2 l <strong>4,80 €</strong></span>
+                <span>0,4 l <strong>8,50 €</strong></span>
+              </div>
+            </div>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Hausgemachte Erdbeermarmelade</h3></div>
+              <div class="vino-prices"><span><strong>2,00 €</strong></span></div>
+            </div>
+          </article>
+        </div>
+        <p class="menu-note">Kuchen täglich frisch aus der Konditorei Beck, Landshut — in unserer Kuchenvitrine · Umbestellungen ab 0,80 €</p>
+
+      </div>
+
+      <!-- Kaffee -->
+      <div class="tab-panel" id="tab-kaffee" role="tabpanel" hidden>
+
+        <div class="menu-subsection">
+          <span class="menu-subsection-title">Kaffee &amp; Espresso</span>
+          <p class="menu-subsection-note">Auf Wunsch mit Hafer-, Soja- oder laktosefreier Milch (+0,70 €) · koffeinfrei möglich (+0,70 €)</p>
+        </div>
+        <div class="vini-grid">
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Espresso</h3></div>
+              <div class="vino-prices">
+                <span>piccolo <strong>1,90 €</strong></span>
+                <span>doppio <strong>3,80 €</strong></span>
+              </div>
+            </div>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Espresso Macchiato</h3></div>
+              <div class="vino-prices">
+                <span>piccolo <strong>2,20 €</strong></span>
+                <span>doppio <strong>4,00 €</strong></span>
+              </div>
+            </div>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Filterkaffee</h3></div>
+              <div class="vino-prices">
+                <span>klein <strong>3,00 €</strong></span>
+                <span>grande <strong>3,70 €</strong></span>
+              </div>
+            </div>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Cappuccino</h3></div>
+              <div class="vino-prices">
+                <span>klein <strong>3,30 €</strong></span>
+                <span>grande <strong>4,80 €</strong></span>
+              </div>
+            </div>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Kaffee Crema</h3></div>
+              <div class="vino-prices"><span><strong>3,70 €</strong></span></div>
+            </div>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Milchkaffee</h3></div>
+              <div class="vino-prices"><span><strong>3,90 €</strong></span></div>
+            </div>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Latte Macchiato</h3></div>
+              <div class="vino-prices"><span><strong>4,50 €</strong></span></div>
+            </div>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Heiße Schokolade</h3></div>
+              <div class="vino-prices"><span><strong>4,80 €</strong></span></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="menu-subsection">
+          <span class="menu-subsection-title">Spezialitäten</span>
+        </div>
+        <div class="vini-grid">
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Chai Latte</h3><p class="vino-region">Bio</p></div>
+              <div class="vino-prices"><span><strong>5,40 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Chai-Tee mit Zimtsirup und Milch</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Matcha Latte</h3><p class="vino-region">Bio</p></div>
+              <div class="vino-prices"><span><strong>5,00 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Matcha, Maca, Moringa, Weizen- und Gerstengras</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Goldene Milch</h3><p class="vino-region">Bio</p></div>
+              <div class="vino-prices"><span><strong>5,00 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Kurkuma, Ingwer, Zimt, Ashwaganda und Lucuma</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Heiße Inge</h3></div>
+              <div class="vino-prices">
+                <span>klassisch <strong>4,50 €</strong></span>
+                <span>mit Shot <strong>5,80 €</strong></span>
+              </div>
+            </div>
+            <p class="vino-desc">Ingwersirup, Zitronensaft, frischer Ingwer, Zitronenscheiben · auf Wunsch mit Orangen-Ingwer-Shot</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Heiße Orange</h3></div>
+              <div class="vino-prices"><span><strong>4,50 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Ingwer- und Orangensirup, frischer Ingwer und Orangenscheiben</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Glas Tee</h3><p class="vino-region">Bio · nach Wahl</p></div>
+              <div class="vino-prices"><span><strong>4,20 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Grüntee (Lung Ching / Mango-Orange) · Früchtetee (Orange-Ingwer / Tropical-Limette / Waldfrucht) · Kräuter, Rooibos oder Schwarztee</p>
+          </article>
+        </div>
+
+        <div class="menu-subsection">
+          <span class="menu-subsection-title">Kalt &amp; Eis</span>
+        </div>
+        <div class="vini-grid">
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Affogato</h3></div>
+              <div class="vino-prices"><span><strong>4,80 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Doppio Espresso mit einer Kugel Vanilleeis</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Iced Latte</h3></div>
+              <div class="vino-prices"><span><strong>4,50 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Kalte Milch mit einem Espresso</p>
+          </article>
+          <article class="vino-card vino-featured">
+            <div class="vino-top">
+              <div><h3>paNino's Shakerato</h3><p class="vino-region">Hauskreation</p></div>
+              <div class="vino-prices"><span><strong>6,00 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Geshakte Milch mit Vanillesirup und einem doppio Espresso</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Eiskaffee</h3><p class="vino-region">Saisonal</p></div>
+              <div class="vino-prices"><span><strong>6,10 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Kalter Kaffee mit zwei Kugeln Vanilleeis und Sahne</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Eisschokolade</h3><p class="vino-region">Saisonal</p></div>
+              <div class="vino-prices"><span><strong>7,10 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Kalte Schokolade mit zwei Kugeln Vanilleeis und Sahne</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Kindercappuccino</h3></div>
+              <div class="vino-prices"><span><strong>0,50 €</strong></span></div>
+            </div>
+          </article>
+        </div>
+
+      </div>
+
+      <!-- Getränke & Vini -->
+      <div class="tab-panel" id="tab-getraenke" role="tabpanel" hidden>
+
+        <div class="menu-subsection">
+          <span class="menu-subsection-title">Weine offen</span>
+        </div>
+        <div class="vini-grid">
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Chardonnay Garganego del Veneto IGT</h3><p class="vino-region">Weißwein · Venetien · fruchtig, leicht, elegant</p></div>
+              <div class="vino-prices"><span>0,2 l <strong>7,20 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Aromen von Äpfeln und Brotkruste</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Pinot Grigio delle Venezie IGT</h3><p class="vino-region">Weißwein · Venetien · frisch, mild, schmelzig</p></div>
+              <div class="vino-prices"><span>0,2 l <strong>7,20 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Fruchtige Aromen mit Anklängen von Melone und Pfirsich</p>
+          </article>
+          <article class="vino-card vino-featured">
+            <div class="vino-top">
+              <div><h3>Cà dei Frati Lugana DOC</h3><p class="vino-region">Weißwein · Lombardei · mineralisch</p></div>
+              <div class="vino-prices">
+                <span>0,2 l <strong>8,90 €</strong></span>
+                <span>0,75 l <strong>33,00 €</strong></span>
+              </div>
+            </div>
+            <p class="vino-desc">Frisches Bouquet mit zarten Blütennoten, mineralische Note, Gewürze und kandierte Früchte</p>
+          </article>
+          <article class="vino-card vino-featured">
+            <div class="vino-top">
+              <div><h3>Moscato d'Asti DOCG</h3><p class="vino-region">Weißwein · Piemont · perlend, fruchtig</p></div>
+              <div class="vino-prices"><span>0,75 l <strong>33,00 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Weich und fruchtig mit ausgewogener Restsüße, brillantes helles Strohgelb</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Cerasuolo d'Abruzzo DOC</h3><p class="vino-region">Roséwein · Abruzzen · fruchtbetont</p></div>
+              <div class="vino-prices">
+                <span>0,2 l <strong>7,20 €</strong></span>
+                <span>0,75 l <strong>24,50 €</strong></span>
+              </div>
+            </div>
+            <p class="vino-desc">Würzig, saftig, frisch · Duft nach Waldfrüchten, gut eingebundene Säure</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Primitivo Salento IGT</h3><p class="vino-region">Rotwein · Apulien · kräftig</p></div>
+              <div class="vino-prices">
+                <span>0,2 l <strong>7,20 €</strong></span>
+                <span>0,75 l <strong>25,50 €</strong></span>
+              </div>
+            </div>
+            <p class="vino-desc">Schwarze reife Beeren, Nuancen von Tabak, Kräutern und französischer Eiche</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Bardolino Villa Rocca</h3><p class="vino-region">Rotwein · Venetien · harmonisch</p></div>
+              <div class="vino-prices"><span>0,2 l <strong>7,20 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Frisches Bouquet mit Aromen von roten Früchten und einem Hauch Würze</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Bardolino Chiaretto Classico DOC</h3><p class="vino-region">Roséwein · Venetien · trocken</p></div>
+              <div class="vino-prices"><span>0,75 l <strong>24,50 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Frische Aromen von Pfirsich und Kirsche, am Gaumen trocken, harmonisch und voll</p>
+          </article>
+        </div>
+
+        <div class="menu-subsection">
+          <span class="menu-subsection-title">Prickelndes</span>
+        </div>
+        <div class="vini-grid">
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Valdo Prosecco DOC</h3><p class="vino-region">Venetien · perlend</p></div>
+              <div class="vino-prices">
+                <span>0,1 l <strong>3,90 €</strong></span>
+                <span>0,75 l <strong>26,90 €</strong></span>
+              </div>
+            </div>
+            <p class="vino-desc">Leicht, fruchtig, perlend — der perfekte Aperitivo</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Weinschorle</h3></div>
+              <div class="vino-prices">
+                <span>0,2 l <strong>4,50 €</strong></span>
+                <span>0,4 l <strong>7,20 €</strong></span>
+              </div>
+            </div>
+          </article>
+          <article class="vino-card vino-featured">
+            <div class="vino-top">
+              <div><h3>Moët Ice Imperial</h3><p class="vino-region">Champagne · für besondere Anlässe</p></div>
+              <div class="vino-prices"><span>0,75 l <strong>120,00 €</strong></span></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="menu-subsection">
+          <span class="menu-subsection-title">Sprizz-iges</span>
+        </div>
+        <div class="vini-grid">
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Aperol · Campari · Gin Sprizz</h3><p class="vino-region">Klassiker</p></div>
+              <div class="vino-prices"><span>je <strong>7,50 €</strong></span></div>
+            </div>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Italicus · Limoncello · Lavendel Sprizz</h3><p class="vino-region">Mediterran</p></div>
+              <div class="vino-prices"><span>je <strong>7,50 €</strong></span></div>
+            </div>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Hugo · Lillet Wild Berry · Lillet White Peach</h3><p class="vino-region">Fruchtig</p></div>
+              <div class="vino-prices"><span>je <strong>7,50 €</strong></span></div>
+            </div>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Ingwer-Zitrone · Maracuja · Rhabarber · Rosato · Martini · Sarti Sprizz</h3><p class="vino-region">Spezialitäten</p></div>
+              <div class="vino-prices"><span>je <strong>7,50 €</strong></span></div>
+            </div>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Fresh Berry · Virgin Hugo · Orangen Sprizz</h3><p class="vino-region">Alkoholfrei</p></div>
+              <div class="vino-prices"><span>je <strong>6,50 €</strong></span></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="menu-subsection">
+          <span class="menu-subsection-title">Cocktails</span>
+        </div>
+        <div class="vini-grid">
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Caipirinha</h3></div>
+              <div class="vino-prices"><span><strong>8,50 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Pitu Cachaca, brauner Rohrzucker und Limetten</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Cuba Libre</h3></div>
+              <div class="vino-prices"><span><strong>8,50 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Havana Club, Limetten und Cola</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Mojito</h3></div>
+              <div class="vino-prices"><span><strong>8,50 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Havana Club, Minze, Puderzucker, Zuckersirup und Limetten</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Negroni</h3></div>
+              <div class="vino-prices"><span><strong>8,50 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Vermouth Rosso, Campari und Malfi Gin</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Aperol Sour</h3></div>
+              <div class="vino-prices"><span><strong>8,50 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Aperol, Puderzucker, Zitronen- und Orangensaft</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Whiskey Sour</h3></div>
+              <div class="vino-prices"><span><strong>8,50 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Bourbon Whiskey, Puderzucker und Zitronensaft</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Pina Colada</h3></div>
+              <div class="vino-prices"><span><strong>8,90 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Myers' Rum, Kokosnusssirup, Sahne und Ananassaft</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Sex on the Beach</h3></div>
+              <div class="vino-prices"><span><strong>8,90 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Wodka, Peachtree, Crème de Cassis, Zitronen-, Orangen- und Ananassaft</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Touch Down</h3></div>
+              <div class="vino-prices"><span><strong>8,90 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Wodka, Apricot Brandy, Grenadine und Maracujanektar, Ananas- und Zitronensaft</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Fruit Punch · Virgin Caipi · Virgin Mojito · Virgin Pina</h3><p class="vino-region">Alkoholfrei</p></div>
+              <div class="vino-prices"><span>je <strong>7,20 €</strong></span></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="menu-subsection">
+          <span class="menu-subsection-title">Biere</span>
+        </div>
+        <div class="vini-grid">
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Augustiner Weißbier</h3><p class="vino-region">0,5 l</p></div>
+              <div class="vino-prices"><span><strong>4,50 €</strong></span></div>
+            </div>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Augustiner Helles</h3><p class="vino-region">0,5 l</p></div>
+              <div class="vino-prices"><span><strong>4,50 €</strong></span></div>
+            </div>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Radler · Russ'n</h3><p class="vino-region">0,5 l</p></div>
+              <div class="vino-prices"><span>je <strong>4,50 €</strong></span></div>
+            </div>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Alkoholfrei: Weißbier oder Helles</h3><p class="vino-region">0,5 l</p></div>
+              <div class="vino-prices"><span>je <strong>4,50 €</strong></span></div>
+            </div>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Pils</h3><p class="vino-region">0,33 l</p></div>
+              <div class="vino-prices"><span><strong>3,90 €</strong></span></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="menu-subsection">
+          <span class="menu-subsection-title">Alkoholfreie Getränke</span>
+        </div>
+        <div class="vini-grid">
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Acqua Panna · San Pellegrino</h3></div>
+              <div class="vino-prices">
+                <span>0,25 l <strong>3,20 €</strong></span>
+                <span>0,75 l <strong>6,90 €</strong></span>
+              </div>
+            </div>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Tafelwasser</h3><p class="vino-region">spritzig oder still · 0,4 l</p></div>
+              <div class="vino-prices"><span><strong>3,10 €</strong></span></div>
+            </div>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Coca Cola · Coca Cola Zero</h3><p class="vino-region">0,33 l</p></div>
+              <div class="vino-prices"><span>je <strong>3,90 €</strong></span></div>
+            </div>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Orangenlimo · Zitronenlimo</h3></div>
+              <div class="vino-prices">
+                <span>0,2 l <strong>2,90 €</strong></span>
+                <span>0,4 l <strong>3,90 €</strong></span>
+              </div>
+            </div>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Hausgemachte Limonade</h3><p class="vino-region">0,4 l · Erdbeere, Himbeere, Holunder, Mango, Maracuja, Mojitominze, Pfirsich</p></div>
+              <div class="vino-prices"><span><strong>5,90 €</strong></span></div>
+            </div>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Freshneider</h3><p class="vino-region">0,4 l</p></div>
+              <div class="vino-prices"><span><strong>4,90 €</strong></span></div>
+            </div>
+            <p class="vino-desc">Soda, Zitronensaft und Waldbeeren auf Eis</p>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Saftschorlen</h3><p class="vino-region">Ananas, Apfel, Orange, Mango, Johannisbeer, Kirsch, Maracuja, Pfirsich oder Rhabarber</p></div>
+              <div class="vino-prices">
+                <span>0,2 l <strong>3,30 €</strong></span>
+                <span>0,4 l <strong>4,30 €</strong></span>
+              </div>
+            </div>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Fruchtsäfte</h3><p class="vino-region">Ananas, Apfel, Orange, Mango u. v. m.</p></div>
+              <div class="vino-prices">
+                <span>0,2 l <strong>4,50 €</strong></span>
+                <span>0,4 l <strong>6,50 €</strong></span>
+              </div>
+            </div>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Eistee</h3><p class="vino-region">Pfirsich oder Zitrone · 0,4 l</p></div>
+              <div class="vino-prices"><span><strong>3,90 €</strong></span></div>
+            </div>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Schweppes</h3><p class="vino-region">Bitter Lemon · Ginger Ale · Tonic Water · 0,2 l</p></div>
+              <div class="vino-prices"><span><strong>3,70 €</strong></span></div>
+            </div>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Paulaner Spezi</h3><p class="vino-region">0,33 l</p></div>
+              <div class="vino-prices"><span><strong>3,90 €</strong></span></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="menu-subsection">
+          <span class="menu-subsection-title">Spirituosen</span>
+        </div>
+        <div class="vini-grid">
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Averna · Frangelico · Limoncello · Ramazzotti</h3><p class="vino-region">2 cl</p></div>
+              <div class="vino-prices"><span>je <strong>3,10 €</strong></span></div>
+            </div>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Grappa</h3><p class="vino-region">2 cl</p></div>
+              <div class="vino-prices"><span><strong>3,90 €</strong></span></div>
+            </div>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Martini bianco</h3><p class="vino-region">4 cl</p></div>
+              <div class="vino-prices"><span><strong>5,40 €</strong></span></div>
+            </div>
+          </article>
+          <article class="vino-card">
+            <div class="vino-top">
+              <div><h3>Baileys</h3><p class="vino-region">4 cl</p></div>
+              <div class="vino-prices"><span><strong>5,40 €</strong></span></div>
+            </div>
+          </article>
+        </div>
+
+      </div>
+
+      <div class="carta-footer" data-gsap="fade-up">
+        <p>Alle Preise inkl. MwSt. &middot; Allergene auf Anfrage</p>
+        <a href="#" class="btn btn-pdf-download">
+          <i data-lucide="file-down" aria-hidden="true"></i>
+          Komplette Karte als PDF herunterladen
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       4. L'ATMOSFERA
+  ══════════════════════════════════════ -->
+  <section class="section atmosfera" id="atmosfera" aria-label="Unser Ambiente">
+    <div class="container">
+
+      <div class="atmosfera-header" data-gsap="fade-up">
+        <span class="section-eyebrow">L'Atmosfera</span>
+        <h2 class="section-title">Ein Ort zum Verweilen</h2>
+        <p class="section-subtitle">
+          Jedes Detail ist darauf ausgelegt, Ihren Abend unvergesslich zu machen.
+        </p>
+      </div>
+
+      <div class="bento-grid" role="list">
+        <figure class="bento-cell bento-wide" data-gsap="bento" role="listitem">
+          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop"
+               alt="Der Speisesaal von Panino im Abendlicht" width="1200" height="800" loading="lazy">
+          <figcaption>Il Salone</figcaption>
+        </figure>
+        <figure class="bento-cell bento-narrow" data-gsap="bento" role="listitem">
+          <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=700&auto=format&fit=crop"
+               alt="Unser Weinkeller mit ausgesuchten italienischen Weinen" width="700" height="600" loading="lazy">
+          <figcaption>La Cantina</figcaption>
+        </figure>
+        <figure class="bento-cell bento-narrow" data-gsap="bento" role="listitem">
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=700&auto=format&fit=crop"
+               alt="Die Terrasse am Schrannenplatz" width="700" height="600" loading="lazy">
+          <figcaption>La Terrazza</figcaption>
+        </figure>
+        <figure class="bento-cell bento-wide" data-gsap="bento" role="listitem">
+          <img src="https://images.unsplash.com/photo-1581299894007-aaa50297cf16?q=80&w=1200&auto=format&fit=crop"
+               alt="Unser Küchenchef bei der Arbeit" width="1200" height="800" loading="lazy">
+          <figcaption>La Cucina</figcaption>
+        </figure>
+      </div>
+
+      <div class="atmosfera-stats" data-gsap="fade-up" aria-label="Kennzahlen">
+        <div class="stat">
+          <strong class="stat-num" data-count="60" aria-label="60 Sitzplätze">0</strong>
+          <span>Sitzplätze</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat">
+          <strong class="stat-num" data-count="180" aria-label="180 Weine im Keller">0</strong>
+          <span>Weine im Keller</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat">
+          <strong class="stat-num" data-count="20" aria-label="20 Plätze privat">0</strong>
+          <span>Plätze privat</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       5. LA PRENOTAZIONE
+  ══════════════════════════════════════ -->
+  <section class="prenotazione" id="prenotazione" aria-label="Tischreservierung">
+    <div class="preno-texture" aria-hidden="true"></div>
+    <div class="container preno-inner">
+
+      <div class="preno-info" data-gsap="from-left">
+        <span class="section-eyebrow section-eyebrow--light">Reservierung</span>
+        <h2 class="section-title">Ihr Tisch <em>wartet</em></h2>
+        <p class="preno-subtitle">
+          Reservieren Sie bequem online. Wir bestätigen Ihre Anfrage per E-Mail —
+          in der Regel innerhalb weniger Minuten.
+        </p>
+        <ul class="preno-details" role="list">
+          <li>
+            <span class="preno-icon" aria-hidden="true">
+              <i data-lucide="phone"></i>
+            </span>
+            <div>
+              <strong>Telefon</strong>
+              <span><a href="tel:+4908122229595">08122 / 229 595</a></span>
+            </div>
+          </li>
+          <li>
+            <span class="preno-icon" aria-hidden="true">
+              <i data-lucide="clock"></i>
+            </span>
+            <div>
+              <strong>Öffnungszeiten</strong>
+              <span>Di–Sa 11:30–14:30 · 17:30–22:30 Uhr</span>
+              <span>So 12:00–15:00 Uhr · Mo Ruhetag</span>
+            </div>
+          </li>
+          <li>
+            <span class="preno-icon" aria-hidden="true">
+              <i data-lucide="map-pin"></i>
+            </span>
+            <div>
+              <strong>Adresse</strong>
+              <span>Schrannenplatz 2, 85435 Erding</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="preno-widget-frame" data-gsap="from-right">
+        <div class="widget-ornament-header" aria-hidden="true">
+          <span class="ornament-line"></span>
+          <span class="ornament-star">✦</span>
+          <span class="ornament-label">Online Reservierung</span>
+          <span class="ornament-star">✦</span>
+          <span class="ornament-line"></span>
+        </div>
+
+        <!--
+          ╔═══════════════════════════════════════════╗
+          ║  RESMIO WIDGET — Aktivierung:             ║
+          ║                                           ║
+          ║  1. Konto anlegen: https://resmio.com     ║
+          ║  2. Einstellungen → Widget → ID kopieren  ║
+          ║  3. Den Platzhalter-Block unten ersetzen: ║
+          ║     <div id="resmio-booking-widget"></div>║
+          ║  4. Vor </body> Script-Tag einfügen:      ║
+          ║     <script src="https://app.resmio.com/  ║
+          ║     DEINE-ID/widget.js"></script>         ║
+          ╚═══════════════════════════════════════════╝
+        -->
+        <div class="widget-placeholder" id="widgetPlaceholder">
+          <i data-lucide="calendar-check" class="widget-placeholder-icon" aria-hidden="true"></i>
+          <p class="widget-placeholder-title">Reservierungs-Widget</p>
+          <p class="widget-placeholder-text">
+            Hier erscheint das resmio-Buchungswidget nach Aktivierung.<br>
+            Bis dahin können Gäste telefonisch reservieren.
+          </p>
+          <a href="tel:+4908122229595" class="btn btn-gold">
+            <i data-lucide="phone" aria-hidden="true"></i>
+            Jetzt anrufen
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       6. DOVE SIAMO
+  ══════════════════════════════════════ -->
+  <section class="section dove-siamo" id="dove-siamo" aria-label="Kontakt und Anfahrt">
+    <div class="container dove-grid">
+
+      <div class="dove-map">
+        <iframe
+          title="Panino Ristorante auf Google Maps — Schrannenplatz Erding"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18035.335090710756!2d11.9002574491778!3d48.31295572185459!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e11a3175d0399%3A0x51da26629cdd384a!2spaNino%20Erding!5e1!3m2!1sde!2sde!4v1781607091332!5m2!1sde!2sde"
+          width="100%"
+          height="100%"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+      <div class="dove-info" data-gsap="from-right">
+        <span class="section-eyebrow">Kontakt &amp; Anfahrt</span>
+        <h2 class="section-title">Finden Sie uns</h2>
+
+        <div class="dove-details">
+          <div class="dove-detail-row">
+            <i data-lucide="map-pin" aria-hidden="true"></i>
+            <div>
+              <strong>Adresse</strong>
+              <p>Schrannenplatz 2<br>85435 Erding</p>
+            </div>
+          </div>
+          <div class="dove-detail-row">
+            <i data-lucide="clock" aria-hidden="true"></i>
+            <div>
+              <strong>Öffnungszeiten</strong>
+              <p>
+                Di–Sa: 11:30–14:30 · 17:30–22:30 Uhr<br>
+                Sonntag: 12:00–15:00 Uhr<br>
+                Montag: Ruhetag
+              </p>
+            </div>
+          </div>
+          <div class="dove-detail-row">
+            <i data-lucide="car" aria-hidden="true"></i>
+            <div>
+              <strong>Parken</strong>
+              <p>Stadtparkhaus Erding, 5 Min. zu Fuß<br>
+                 Straßenparkplätze am Schrannenplatz</p>
+            </div>
+          </div>
+          <div class="dove-detail-row">
+            <i data-lucide="phone" aria-hidden="true"></i>
+            <div>
+              <strong>Kontakt</strong>
+              <p>
+                <a href="tel:+4908122229595">08122 / 229 595</a><br>
+                <a href="mailto:info@panino-erding.de">[info@panino-erding.de]</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn btn-gold dove-cta" data-action="reserve" type="button">
+          Jetzt reservieren
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       7. FOOTER
+  ══════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer-inner">
+
+      <div class="footer-top">
+        <div class="footer-brand">
+          <p class="footer-logo" aria-label="Panino Ristorante">
+            <span class="logo-wordmark"><span class="logo-pa">pa</span><span class="logo-ni">Ni</span><span class="logo-no">no</span></span>
+            <span class="logo-tricolor" aria-hidden="true"></span>
+          </p>
+          <p class="footer-tagline">Cucina italiana &middot; Schrannenplatz &middot; Erding</p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer Navigation">
+          <a href="#storia">La Storia</a>
+          <a href="#carta">La Carta</a>
+          <a href="#atmosfera">Atmosfera</a>
+          <a href="#prenotazione">Reservierung</a>
+          <a href="#dove-siamo">Kontakt &amp; Anfahrt</a>
+        </nav>
+
+        <div class="footer-social">
+          <!-- Instagram -->
+          <a href="#" aria-label="Panino auf Instagram" class="social-link" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor" stroke-width="1.6"
+                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke-width="2.5"/>
+            </svg>
+          </a>
+          <!-- Facebook -->
+          <a href="#" aria-label="Panino auf Facebook" class="social-link" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor" stroke-width="1.6"
+                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </a>
+          <!-- TripAdvisor (stilisiertes Eulen-Logo: zwei Augen + Bogen) -->
+          <a href="#" aria-label="Panino auf TripAdvisor" class="social-link" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor" stroke-width="1.6"
+                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 9.5C5.5 5.5 9 4 12 4s6.5 1.5 8 5.5"/>
+              <circle cx="8.5" cy="14" r="3.5"/>
+              <circle cx="15.5" cy="14" r="3.5"/>
+              <circle cx="8.5" cy="14" r="1.3" fill="currentColor" stroke="none"/>
+              <circle cx="15.5" cy="14" r="1.3" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+          <!-- Google Maps -->
+          <a href="https://maps.google.com/?q=paNino+Erding" target="_blank"
+             rel="noopener noreferrer" aria-label="Panino auf Google Maps" class="social-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor" stroke-width="1.6"
+                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Panino Ristorante. Alle Rechte vorbehalten.</p>
+        <div class="footer-legal">
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ══════════════════════════════════════
+       RESERVIERUNGS-MODAL
+  ══════════════════════════════════════ -->
+  <div class="modal-overlay" id="reservationModal"
+       role="dialog" aria-modal="true" aria-labelledby="modalHeading" hidden>
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-panel">
+
+      <div class="modal-header">
+        <div class="modal-brand">
+          <p class="modal-logo" id="modalHeading">
+            <span>P</span>ANINO
+          </p>
+          <p class="modal-subline">Tischreservierung</p>
+        </div>
+        <button class="modal-close" id="modalClose" type="button" aria-label="Schließen">
+          <i data-lucide="x" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="modal-body" id="modalBody">
+        <div class="modal-placeholder">
+          <i data-lucide="calendar-check" class="modal-placeholder-icon" aria-hidden="true"></i>
+          <p class="modal-placeholder-title">Widget wird aktiviert …</p>
+          <p class="modal-placeholder-hint">
+            Für sofortige Reservierung:<br>
+            <a href="tel:+4908122229595">08122 / 229 595</a>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════
+       SCRIPTS
+  ══════════════════════════════════════ -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- ── Speisekarte: Akkordeon ── -->
+  <script>
+  (function () {
+
+    function openSection(grid, sub) {
+      grid.style.height = grid.scrollHeight + 'px';
+      grid.addEventListener('transitionend', function onEnd() {
+        grid.style.height = 'auto';
+        grid.removeEventListener('transitionend', onEnd);
+      });
+      sub.setAttribute('aria-expanded', 'true');
+      sub.querySelector('.acc-icon').textContent = '−';
+    }
+
+    function closeSection(grid, sub) {
+      grid.style.height = grid.scrollHeight + 'px';
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          grid.style.height = '0';
+        });
+      });
+      sub.setAttribute('aria-expanded', 'false');
+      sub.querySelector('.acc-icon').textContent = '+';
+    }
+
+    function setupAccordion(panel) {
+      var subsections = panel.querySelectorAll('.menu-subsection');
+      if (subsections.length <= 1) return;
+
+      subsections.forEach(function (sub, i) {
+        var grid = sub.nextElementSibling;
+        if (!grid || !grid.classList.contains('vini-grid')) return;
+
+        if (i === 0) {
+          sub.classList.remove('acc-header');
+          return;
+        }
+
+        if (sub.classList.contains('acc-header')) return;
+
+        // Wrapper-Div erzeugen: nimmt Note + Grid auf und ist der animierte Body
+        var wrapper = document.createElement('div');
+        wrapper.className = 'acc-body';
+        wrapper.style.height = '0';
+        wrapper.style.overflow = 'hidden';
+
+        // Note aus der Subsection herauslösen und VOR dem Grid in den Wrapper legen
+        // → Note ist außerhalb des Grid-Containers, Grid bleibt sauber
+        var note = sub.querySelector('.menu-subsection-note');
+        if (note) {
+          sub.removeChild(note);
+          wrapper.appendChild(note);
+        }
+
+        // Wrapper vor dem Grid einfügen, Grid in den Wrapper verschieben
+        grid.parentNode.insertBefore(wrapper, grid);
+        wrapper.appendChild(grid);
+
+        // Icon an die Subsection-Überschrift anhängen
+        var icon = document.createElement('span');
+        icon.className = 'acc-icon';
+        icon.setAttribute('aria-hidden', 'true');
+        icon.textContent = '+';
+        sub.appendChild(icon);
+
+        sub.classList.add('acc-header');
+        sub.setAttribute('role', 'button');
+        sub.setAttribute('tabindex', '0');
+        sub.setAttribute('aria-expanded', 'false');
+
+        function toggle() {
+          if (sub.getAttribute('aria-expanded') === 'true') {
+            closeSection(wrapper, sub);
+          } else {
+            openSection(wrapper, sub);
+          }
+        }
+
+        sub.addEventListener('click', toggle);
+        sub.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+        });
+      });
+    }
+
+    // Alle Panels beim Laden initialisieren
+    document.querySelectorAll('.tab-panel').forEach(setupAccordion);
+
+    // Tab-Wechsel: alle Akkordeon-Wrapper des neuen Tabs schließen
+    document.querySelectorAll('.tab-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var target = btn.dataset.tab;
+        var panel = document.getElementById('tab-' + target);
+        if (!panel) return;
+        panel.querySelectorAll('.acc-body').forEach(function (wrapper) {
+          var sub = wrapper.previousElementSibling;
+          if (sub && sub.classList.contains('acc-header')) {
+            closeSection(wrapper, sub);
+          } else {
+            wrapper.style.height = '0';
+          }
+        });
+      });
+    });
+
+  })();
+  </script>
+
+</body>
+</html>
