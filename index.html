@@ -1332,31 +1332,7 @@
           <span class="ornament-line"></span>
         </div>
 
-        <!--
-          ╔═══════════════════════════════════════════╗
-          ║  RESMIO WIDGET — Aktivierung:             ║
-          ║                                           ║
-          ║  1. Konto anlegen: https://resmio.com     ║
-          ║  2. Einstellungen → Widget → ID kopieren  ║
-          ║  3. Den Platzhalter-Block unten ersetzen: ║
-          ║     <div id="resmio-booking-widget"></div>║
-          ║  4. Vor </body> Script-Tag einfügen:      ║
-          ║     <script src="https://app.resmio.com/  ║
-          ║     DEINE-ID/widget.js"></script>         ║
-          ╚═══════════════════════════════════════════╝
-        -->
-        <div class="widget-placeholder" id="widgetPlaceholder">
-          <i data-lucide="calendar-check" class="widget-placeholder-icon" aria-hidden="true"></i>
-          <p class="widget-placeholder-title">Reservierungs-Widget</p>
-          <p class="widget-placeholder-text">
-            Hier erscheint das resmio-Buchungswidget nach Aktivierung.<br>
-            Bis dahin können Gäste telefonisch reservieren.
-          </p>
-          <a href="tel:+4908122229595" class="btn btn-gold">
-            <i data-lucide="phone" aria-hidden="true"></i>
-            Jetzt anrufen
-          </a>
-        </div>
+        <div id="resmio-panino"></div>
 
       </div>
     </div>
@@ -1534,14 +1510,7 @@
       </div>
 
       <div class="modal-body" id="modalBody">
-        <div class="modal-placeholder">
-          <i data-lucide="calendar-check" class="modal-placeholder-icon" aria-hidden="true"></i>
-          <p class="modal-placeholder-title">Widget wird aktiviert …</p>
-          <p class="modal-placeholder-hint">
-            Für sofortige Reservierung:<br>
-            <a href="tel:+4908122229595">08122 / 229 595</a>
-          </p>
-        </div>
+        <div id="resmio-panino-modal"></div>
       </div>
 
     </div>
@@ -1663,6 +1632,14 @@
 
   })();
   </script>
+
+  <!-- resmio Online-Reservierung -->
+  <script>(function(d, s) {
+    var js, rjs = d.getElementsByTagName(s)[0];
+    js = d.createElement(s);
+    js.src = "//static.resmio.com/static/de/widget.js#id=panino&width=275px&height=400px";
+    rjs.parentNode.insertBefore(js, rjs);
+  }(document, "script"));</script>
 
 </body>
 </html>
