@@ -21,7 +21,12 @@ const navToggle = document.getElementById('navToggle');
 const navLinks  = document.getElementById('navLinks');
 
 window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 80);
+  const y = window.scrollY;
+  if (y > 80) {
+    nav.classList.add('scrolled');
+  } else if (y < 10) {
+    nav.classList.remove('scrolled');
+  }
 }, { passive: true });
 
 navToggle.addEventListener('click', () => {
