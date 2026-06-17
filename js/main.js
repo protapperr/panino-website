@@ -175,33 +175,23 @@ tabBtns.forEach(btn => {
 
     if (data.length === 0) { showError(); return; }
 
-    /* Nach Kategorie (Spalte A) gruppieren */
-    const groups = {}, order = [];
+    /* Alle Gerichte fortlaufend ohne Kategorie-Gruppierung rendern */
+    let html = '<div class="vini-grid">';
     data.forEach(function (r) {
-      const cat = esc(r[0]) || 'Gerichte';
-      if (!groups[cat]) { groups[cat] = []; order.push(cat); }
-      groups[cat].push({ name: esc(r[1]), desc: esc(r[2]), price: esc(r[3]) });
+      const name  = esc(r[1]);
+      const desc  = esc(r[2]);
+      const price = esc(r[3]);
+      if (!name) return;
+      html +=
+        '<article class="vino-card">' +
+          '<div class="vino-top">' +
+            '<div><h3>' + name + '</h3></div>' +
+            (price ? '<div class="vino-prices"><span><strong>' + price + '</strong></span></div>' : '') +
+          '</div>' +
+          (desc ? '<p class="vino-desc">' + desc + '</p>' : '') +
+        '</article>';
     });
-
-    /* HTML zusammenbauen */
-    let html = '';
-    order.forEach(function (cat) {
-      html += '<div class="menu-subsection"><span class="menu-subsection-title">' +
-              cat + '</span></div><div class="vini-grid">';
-      groups[cat].forEach(function (item) {
-        html +=
-          '<article class="vino-card">' +
-            '<div class="vino-top">' +
-              '<div><h3>' + item.name + '</h3></div>' +
-              (item.price
-                ? '<div class="vino-prices"><span><strong>' + item.price + '</strong></span></div>'
-                : '') +
-            '</div>' +
-            (item.desc ? '<p class="vino-desc">' + item.desc + '</p>' : '') +
-          '</article>';
-      });
-      html += '</div>';
-    });
+    html += '</div>';
 
     const today = new Date().toLocaleDateString('de-DE',
       { day: '2-digit', month: '2-digit', year: 'numeric' });
