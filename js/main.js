@@ -107,28 +107,45 @@ tabBtns.forEach(btn => {
 
 /* ── 4. Wochenkarte – Google Sheets ────────────────── */
 /*
-   Erwartetes Spaltenformat der Google-Tabelle (ab Zeile 2, Zeile 1 = Kopfzeile):
-   A: Kategorie   (z. B. „Vorspeise", „Hauptgang", „Dessert")
-   B: Gericht     (Name des Gerichts)
-   C: Beschreibung
-   D: Preis       (z. B. „14,90 €")
+   Spaltenformat der Google-Tabelle (Zeile 1 = Kopfzeile, ab Zeile 2 Daten):
+   A: Kategorie  |  B: Gericht  |  C: Beschreibung  |  D: Preis
 */
 (function () {
   const SHEET_ID = '1BbP48qLsILFS7KFqnUrhRyM8nxuayeES3UmGP-PzzQs';
-  const URL      = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json`;
-  const el       = document.getElementById('wochenkarte-content');
+  /* CSV-Output: kein JSON-Wrapper, direkt lesbar, funktioniert mit "Freigabe via Link" */
+  const FETCH_URL = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID +
+                    '/gviz/tq?tqx=out:csv&gid=0';
+  const el = document.getElementById('wochenkarte-content');
 
-  function cell(row, idx) {
-    const c = row.c && row.c[idx];
-    return c ? (c.f != null ? c.f : String(c.v != null ? c.v : '')) : '';
-  }
-
-  function escape(str) {
-    return String(str)
+  /* ── Hilfsfunktionen ── */
+  function esc(str) {
+    return String(str || '')
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;');
+      .replace(/>/g, '&gt;');
+  }
+
+  /* Einfacher CSV-Parser: verarbeitet optional quoted fields ("...") */
+  function parseCSV(text) {
+    return text.trim().split('\n').map(function (line) {
+      const cells = [];
+      let cur = '', inQ = false;
+      for (let i = 0; i < line.length; i++) {
+        const ch = line[i];
+        if (ch === '"') {
+          /* zwei aufeinanderfolgende Anführungszeichen = escaped quote */
+          if (inQ && line[i + 1] === '"') { cur += '"'; i++; }
+          else { inQ = !inQ; }
+        } else if (ch === ',' && !inQ) {
+          cells.push(cur.trim());
+          cur = '';
+        } else {
+          cur += ch;
+        }
+      }
+      cells.push(cur.trim());
+      return cells;
+    });
   }
 
   function showLoader() {
@@ -146,38 +163,31 @@ tabBtns.forEach(btn => {
         '<h3>Wochenkarte derzeit nicht verfügbar</h3>' +
         '<p>Bitte schauen Sie später vorbei oder fragen Sie unser Team direkt.<br>' +
            'Telefonisch erreichbar unter ' +
-           '<a href="tel:+4908122229595">08122 / 229 595</a>.</p>' +
+           '<a href="tel:+4908122229595">08122&thinsp;/&thinsp;229&thinsp;595</a>.</p>' +
       '</div>';
   }
 
   function render(rows) {
-    /* Zeilen filtern: leere Zeilen überspringen */
-    const data = rows.filter(function (row) {
-      return row.c && row.c.some(function (c) { return c && c.v != null && c.v !== ''; });
+    /* Kopfzeile überspringen, leere Zeilen herausfiltern */
+    const data = rows.slice(1).filter(function (r) {
+      return r.some(function (c) { return c.length > 0; });
     });
 
     if (data.length === 0) { showError(); return; }
 
-    /* Gerichte nach Kategorie (Spalte A) gruppieren */
-    const groups = {};
-    const order  = [];
-    data.forEach(function (row) {
-      const cat = escape(cell(row, 0)) || 'Gerichte';
+    /* Nach Kategorie (Spalte A) gruppieren */
+    const groups = {}, order = [];
+    data.forEach(function (r) {
+      const cat = esc(r[0]) || 'Gerichte';
       if (!groups[cat]) { groups[cat] = []; order.push(cat); }
-      groups[cat].push({
-        name:  escape(cell(row, 1)),
-        desc:  escape(cell(row, 2)),
-        price: escape(cell(row, 3)),
-      });
+      groups[cat].push({ name: esc(r[1]), desc: esc(r[2]), price: esc(r[3]) });
     });
 
-    /* HTML aufbauen */
+    /* HTML zusammenbauen */
     let html = '';
     order.forEach(function (cat) {
-      html += '<div class="menu-subsection">' +
-                '<span class="menu-subsection-title">' + cat + '</span>' +
-              '</div>' +
-              '<div class="vini-grid">';
+      html += '<div class="menu-subsection"><span class="menu-subsection-title">' +
+              cat + '</span></div><div class="vini-grid">';
       groups[cat].forEach(function (item) {
         html +=
           '<article class="vino-card">' +
@@ -199,27 +209,15 @@ tabBtns.forEach(btn => {
     el.innerHTML = html;
   }
 
-  /* Laden starten */
+  /* ── Laden ── */
   showLoader();
-  fetch(URL)
+  fetch(FETCH_URL)
     .then(function (res) {
       if (!res.ok) throw new Error('HTTP ' + res.status);
       return res.text();
     })
     .then(function (text) {
-      /*
-        Google antwortet im Format:
-          /*O_o*\/
-          google.visualization.Query.setResponse({...});
-        Wir schneiden einfach vom ersten '(' bis zum letzten ')' –
-        das ist robuster als Regex, da der JSON-Inhalt selbst ')' enthalten kann.
-      */
-      const start = text.indexOf('(');
-      const end   = text.lastIndexOf(')');
-      if (start === -1 || end === -1 || end <= start) throw new Error('Parse-Fehler');
-      const parsed = JSON.parse(text.slice(start + 1, end));
-      if (!parsed.table || !Array.isArray(parsed.table.rows)) throw new Error('Keine Tabelle');
-      render(parsed.table.rows);
+      render(parseCSV(text));
     })
     .catch(function () {
       showError();
