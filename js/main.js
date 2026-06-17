@@ -207,11 +207,18 @@ tabBtns.forEach(btn => {
       return res.text();
     })
     .then(function (text) {
-      /* gviz-Response-Wrapper entfernen: /*O_o*\/\ngoogle.visualization.Query.setResponse({...}); */
-      const match = text.match(/google\.visualization\.Query\.setResponse\(([\s\S]*?)\);\s*$/);
-      if (!match) throw new Error('Unbekanntes Antwortformat');
-      const parsed = JSON.parse(match[1]);
-      if (!parsed.table || !parsed.table.rows) throw new Error('Keine Tabelle');
+      /*
+        Google antwortet im Format:
+          /*O_o*\/
+          google.visualization.Query.setResponse({...});
+        Wir schneiden einfach vom ersten '(' bis zum letzten ')' –
+        das ist robuster als Regex, da der JSON-Inhalt selbst ')' enthalten kann.
+      */
+      const start = text.indexOf('(');
+      const end   = text.lastIndexOf(')');
+      if (start === -1 || end === -1 || end <= start) throw new Error('Parse-Fehler');
+      const parsed = JSON.parse(text.slice(start + 1, end));
+      if (!parsed.table || !Array.isArray(parsed.table.rows)) throw new Error('Keine Tabelle');
       render(parsed.table.rows);
     })
     .catch(function () {
