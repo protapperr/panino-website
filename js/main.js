@@ -175,12 +175,12 @@ tabBtns.forEach(btn => {
 
     if (data.length === 0) { showError(); return; }
 
-    /* Alle Gerichte fortlaufend ohne Kategorie-Gruppierung rendern */
+    /* Alle Gerichte fortlaufend rendern: A=titel, B=beschreibung, C=preis */
     let html = '<div class="vini-grid">';
     data.forEach(function (r) {
-      const name  = esc(r[1]);
-      const desc  = esc(r[2]);
-      const price = esc(r[3]);
+      const name  = esc(r[0]);
+      const desc  = esc(r[1]);
+      const price = esc(r[2]);
       if (!name) return;
       html +=
         '<article class="vino-card">' +
