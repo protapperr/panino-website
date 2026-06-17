@@ -115,7 +115,7 @@ tabBtns.forEach(btn => {
 */
 (function () {
   const SHEET_ID = '1BbP48qLsILFS7KFqnUrhRyM8nxuayeES3UmGP-PzzQs';
-  const URL      = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID +
+  const URL      = const url = "https://docs.google.com/spreadsheets/d/1BbP48qLsILFS7KFqnUrhRyM8nxuayeES3UmGP-PzzQs/gviz/tq?tqx=out:csv"; + SHEET_ID +
                    '/gviz/tq?tqx=out:json';
   const el       = document.getElementById('wochenkarte-content');
 
