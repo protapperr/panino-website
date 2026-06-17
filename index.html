@@ -150,8 +150,13 @@
 
       <div class="carta-tabs-wrap" data-gsap="fade-up">
         <div class="carta-tabs" role="tablist" aria-label="Speisekarte Kategorien">
-          <button class="tab-btn active" role="tab" type="button"
-                  aria-selected="true" aria-controls="tab-fruehstueck" data-tab="fruehstueck">
+          <button class="tab-btn tab-btn--woche active" role="tab" type="button"
+                  aria-selected="true" aria-controls="tab-wochenkarte" data-tab="wochenkarte">
+            <span class="woche-pulse" aria-hidden="true"></span>
+            Wochenkarte
+          </button>
+          <button class="tab-btn" role="tab" type="button"
+                  aria-selected="false" aria-controls="tab-fruehstueck" data-tab="fruehstueck">
             Frühstück
           </button>
           <button class="tab-btn" role="tab" type="button"
@@ -177,8 +182,13 @@
         </div>
       </div>
 
+      <!-- Wochenkarte (dynamisch aus Google Sheets) -->
+      <div class="tab-panel active" id="tab-wochenkarte" role="tabpanel">
+        <div id="wochenkarte-content"></div>
+      </div>
+
       <!-- Frühstück -->
-      <div class="tab-panel active" id="tab-fruehstueck" role="tabpanel">
+      <div class="tab-panel" id="tab-fruehstueck" role="tabpanel" hidden>
 
         <div class="menu-subsection">
           <span class="menu-subsection-title">Frühstück</span>

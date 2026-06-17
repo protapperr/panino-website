@@ -105,6 +105,122 @@ tabBtns.forEach(btn => {
 
 
 
+/* ── 4. Wochenkarte – Google Sheets ────────────────── */
+/*
+   Erwartetes Spaltenformat der Google-Tabelle (ab Zeile 2, Zeile 1 = Kopfzeile):
+   A: Kategorie   (z. B. „Vorspeise", „Hauptgang", „Dessert")
+   B: Gericht     (Name des Gerichts)
+   C: Beschreibung
+   D: Preis       (z. B. „14,90 €")
+*/
+(function () {
+  const SHEET_ID = '1BbP48qLsILFS7KFqnUrhRyM8nxuayeES3UmGP-PzzQs';
+  const URL      = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID +
+                   '/gviz/tq?tqx=out:json';
+  const el       = document.getElementById('wochenkarte-content');
+
+  function cell(row, idx) {
+    const c = row.c && row.c[idx];
+    return c ? (c.f != null ? c.f : String(c.v != null ? c.v : '')) : '';
+  }
+
+  function escape(str) {
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function showLoader() {
+    el.innerHTML =
+      '<div class="wk-loader">' +
+        '<div class="wk-spinner"></div>' +
+        '<span>Wochenkarte wird geladen …</span>' +
+      '</div>';
+  }
+
+  function showError() {
+    el.innerHTML =
+      '<div class="wk-error">' +
+        '<div class="wk-error-ornament">✦</div>' +
+        '<h3>Wochenkarte derzeit nicht verfügbar</h3>' +
+        '<p>Bitte schauen Sie später vorbei oder fragen Sie unser Team direkt.<br>' +
+           'Telefonisch erreichbar unter ' +
+           '<a href="tel:+4908122229595">08122 / 229 595</a>.</p>' +
+      '</div>';
+  }
+
+  function render(rows) {
+    /* Zeilen filtern: leere Zeilen überspringen */
+    const data = rows.filter(function (row) {
+      return row.c && row.c.some(function (c) { return c && c.v != null && c.v !== ''; });
+    });
+
+    if (data.length === 0) { showError(); return; }
+
+    /* Gerichte nach Kategorie (Spalte A) gruppieren */
+    const groups = {};
+    const order  = [];
+    data.forEach(function (row) {
+      const cat = escape(cell(row, 0)) || 'Gerichte';
+      if (!groups[cat]) { groups[cat] = []; order.push(cat); }
+      groups[cat].push({
+        name:  escape(cell(row, 1)),
+        desc:  escape(cell(row, 2)),
+        price: escape(cell(row, 3)),
+      });
+    });
+
+    /* HTML aufbauen */
+    let html = '';
+    order.forEach(function (cat) {
+      html += '<div class="menu-subsection">' +
+                '<span class="menu-subsection-title">' + cat + '</span>' +
+              '</div>' +
+              '<div class="vini-grid">';
+      groups[cat].forEach(function (item) {
+        html +=
+          '<article class="vino-card">' +
+            '<div class="vino-top">' +
+              '<div><h3>' + item.name + '</h3></div>' +
+              (item.price
+                ? '<div class="vino-prices"><span><strong>' + item.price + '</strong></span></div>'
+                : '') +
+            '</div>' +
+            (item.desc ? '<p class="vino-desc">' + item.desc + '</p>' : '') +
+          '</article>';
+      });
+      html += '</div>';
+    });
+
+    const today = new Date().toLocaleDateString('de-DE',
+      { day: '2-digit', month: '2-digit', year: 'numeric' });
+    html += '<p class="wk-updated">Stand: ' + today + '</p>';
+    el.innerHTML = html;
+  }
+
+  /* Laden starten */
+  showLoader();
+  fetch(URL)
+    .then(function (res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return res.text();
+    })
+    .then(function (text) {
+      /* gviz-Response-Wrapper entfernen: /*O_o*\/\ngoogle.visualization.Query.setResponse({...}); */
+      const match = text.match(/google\.visualization\.Query\.setResponse\(([\s\S]*?)\);\s*$/);
+      if (!match) throw new Error('Unbekanntes Antwortformat');
+      const parsed = JSON.parse(match[1]);
+      if (!parsed.table || !parsed.table.rows) throw new Error('Keine Tabelle');
+      render(parsed.table.rows);
+    })
+    .catch(function () {
+      showError();
+    });
+}());
+
+
 /* ── 5. GSAP ScrollTrigger Animationen ─────────────── */
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
