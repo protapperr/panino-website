@@ -175,7 +175,15 @@ tabBtns.forEach(btn => {
 
     if (data.length === 0) { showError(); return; }
 
-    /* Alle Gerichte fortlaufend rendern: A=titel, B=beschreibung, C=preis */
+    /* Gültigkeitszeitraum aus Zeile 2 (erster Datensatz), Spalten E (4) und F (5) */
+    const vonRaw = data[0] && data[0][4] ? data[0][4].trim() : '';
+    const bisRaw = data[0] && data[0][5] ? data[0][5].trim() : '';
+    const zeitraum = (vonRaw && bisRaw)
+      ? 'Wochenkarte vom ' + esc(vonRaw) + ' bis ' + esc(bisRaw)
+      : 'Stand: ' + new Date().toLocaleDateString('de-DE',
+          { day: '2-digit', month: '2-digit', year: 'numeric' });
+
+    /* Gerichte rendern: nur A=titel, B=beschreibung, C=preis — E und F werden ignoriert */
     let html = '<div class="vini-grid">';
     data.forEach(function (r) {
       const name  = esc(r[0]);
@@ -193,9 +201,7 @@ tabBtns.forEach(btn => {
     });
     html += '</div>';
 
-    const today = new Date().toLocaleDateString('de-DE',
-      { day: '2-digit', month: '2-digit', year: 'numeric' });
-    html += '<p class="wk-updated">Stand: ' + today + '</p>';
+    html += '<p class="wk-updated">' + zeitraum + '</p>';
     el.innerHTML = html;
   }
 
